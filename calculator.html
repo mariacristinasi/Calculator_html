@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Page Title NEW!!</title>
+  <style>
+      body {background-color: white;}
+    .special {color: rgb(200, 50, 50); font-weight: bold}
+    .other {color: rgb(200, 50, 50)}
+    .operator {font-weight: bold}
+    #result {border: solid 0.2pt; color: rgb(0, 0, 0);font-weight: bold;
+    border-color: black}
+  </style>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script>
+    function operator() {
+            var selector = document.getElementById("oper"); 
+            var option = selector.options[selector.selectedIndex].value; 
+      
+            const x = document.getElementById('first').value;
+            const y = document.getElementById('second').value;
+
+            if (option == "sum") {
+                document.getElementById("result").innerHTML = parseInt(x) + parseInt(y);
+            } 
+            else if (option == "substraction") {
+                document.getElementById("result").innerHTML = parseInt(x) - parseInt(y);
+            } 
+            else if (option == "multiplication") {
+                document.getElementById("result").innerHTML = parseInt(x) * parseInt(y);
+            } 
+            else if (option == "division") {
+                document.getElementById("result").innerHTML = parseInt(x) / parseInt(y);
+            }
+        }
+  </script>
+</head>
+
+<body>
+    <div class="special"> 
+    Calculator
+    </div>
+    <br>
+        <input id="first" placeholder="first number">
+        <input id="second" placeholder="second number">
+        <br>
+        <br>
+    <div class="other">
+        Select the operator:
+        <br>
+        <select id="oper">
+            <option value="sum">+</option>
+            <option value="substraction">-</option>
+            <option value="multiplication">*</option>
+            <option value="division">/</option>
+        </select>
+        <br>
+        <br>
+        <button id="equalTo" onclick='operator()'>=</button>
+        <br>
+        <br>
+        <div id="result">Result</div>
+    </div>
+    
+</body>
